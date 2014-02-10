@@ -4,11 +4,8 @@
 	$listado;
 	$cont=1;
 	foreach ($ruta->listar() as $row) {
-		
 		$listado[$cont]=$row;
 		$cont++;
-
 	}
-	return $listado;
-	
+
 ?>

@@ -17,13 +17,9 @@
     <!-- Custom styles for this template -->
     <link href="css/nav.css" rel="stylesheet">
 
-    <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?sensor=false">
-    </script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false">  </script>
 
-    <script type="text/javascript"
-      src="http://code.jquery.com/jquery-2.0.3.min.js">
-    </script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js">  </script>
 
   <!--script type="text/css">
   </script-->

@@ -23,7 +23,7 @@
 				<td><?php echo $lista_carros[$i]["modelo"]  ?></td>
 				<td><?php echo $lista_carros[$i]["placa_delantera"]  ?></td>
 				<td><?php echo $lista_carros[$i]["placa_lateral"]  ?></td>
-				<td><a href="controllers/controllerPosicion.php?accion=rastrear&id_carro=<?php echo $i?>" >Ver Posición</a></td>
+				<td><a href="controllers/controllerPosicion.php?accion=rastrear&id_carro=<?php echo  $lista_carros[$i]['id']  ?>" >Ver Posición</a></td>
 			</tr>
 
 			<?php 

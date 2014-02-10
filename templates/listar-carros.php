@@ -7,5 +7,4 @@
 		$lista_carros[$cont]=$row;
 		$cont++;
 	}
-	return $lista_carros;
 ?>

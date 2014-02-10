@@ -6,6 +6,14 @@ class carro{
 		$helper=new Helpers();
 		return $helper->select( $dato );
 	}
+	public function listarCarrosDisponibles(){
+		$data["table"]="cl_carro as c";
+		$data["condicion"]=" where c.id not in ( select id_cl_carro from cl_ruta )";
+		//select * from cl_carro as c  where c.id not in ( select id_cl_carro from cl_ruta )
+		include_once("helpers.php");
+		$helper=new Helpers();
+		return $helper->select( $data );
+	}
 	public function editar($data){
 		$pre=array("table"=>"cl_carro","id"=>$data["id"]);
 		include_once("helpers.php");

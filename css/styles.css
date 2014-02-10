@@ -1,7 +1,10 @@
 .formulario{
 	padding: 0 6em;
 }
-
+fieldset{
+	margin:0;
+	padding: 0;
+}
 .carro{
 	background: url(../images/carro.png);
 	background-repeat: no-repeat;
@@ -99,3 +102,36 @@ h3{
 	border-radius: .5em .5em .5em .5em;
 	padding: .1em 1em .1em 1em;
 }
+.margin-tb{
+	margin: 15px 0;
+}
+
+
+	#mapageo { 
+		background: transparent; 
+		height: 500px; 
+		width: 100%; 
+	}
+	#informacion { position: absolute; background: rgba(0,16,27,.85); z-index: 200;
+	 top: 70%; width: 30%; padding: 12px;left: 135px; }
+	
+	#informacion h2,
+	#informacion h3 { color: #FFFFFF; text-shadow: 1px 1px 1px #000000; font-weight: normal; font-size: 1.1em; }
+	
+	#informacion h2 { font-size: 1.4em; margin-bottom: 10px; }
+	
+	#informacion h3 span { color: #FFF555; }
+
+
+
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }

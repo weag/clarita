@@ -1,11 +1,12 @@
 <?php  
 	if ( isset( $_SESSION["rastreo"] ) ) {
+		$coordenada=split(",", $_SESSION["rastreo"]['data']['ubicacion'])
 		?>
 
 <div>
 	<h3>Datos:</h3>
-	Lat:<p id="lat"><?php echo $_SESSION["rastreo"]['data']['lat'] ?> </p>
-	Lng:<p id="lng"><?php echo $_SESSION["rastreo"]['data']['lng'] ?>  </p>
+	Lat:<p id="lat"><?php echo $coordenada[0] ?> </p>
+	Lng:<p id="lng"><?php echo $coordenada[1] ?>  </p>
 </div>
 <div id="mapa"></div>		
 

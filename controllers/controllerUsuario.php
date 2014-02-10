@@ -20,6 +20,27 @@ ob_start();//fix header redirecciones
 		header ("Location:../index.php?page=rastreo-satelital");
 	}elseif ($controller['accion']=="flota") {
 		header ("Location:../index.php?page=flota");
+	}elseif ($controller['accion']=="geo") {
+		header ("Location:../index.php?page=geo");
+	}elseif ($controller['accion']=="rastreoCliente") {
+		header ("Location:../index.php?page=rastreoCliente");
+	}elseif ($controller['accion']=="usuarios") {
+		header ("Location:../index.php?page=usuarios");
+	}elseif ( $controller['accion']=="agregar" ) {
+		$_SESSION["form-usuario"]["template"]="agregar";
+		header ("Location:../index.php?page=usuarios");
+	}
+	elseif ( $controller['accion']=="editar" ) {
+		include_once('../models/usuario.php');
+		$usuario=new Usuario();
+		$_SESSION["form-usuario"]=$usuario->editar( $controller );
+		$_SESSION["form-usuario"]["template"]="editar";
+		header ("Location:../index.php?page=usuarios");
+	}elseif ( $controller['accion']=="eliminar" ) {
+		include_once('../models/usuario.php');
+		$usuario=new Usuario();
+		$_SESSION["result"]=$usuario->eliminar( $controller );
+		header ("Location:../index.php?page=usuarios");
 	}
 
 ob_end_flush(); 

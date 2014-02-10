@@ -11,5 +11,10 @@ ob_start();//fix header redirecciones
 		$posicion=new Posicion();
 		$posicion->rastrear( $controller );
 		header ("Location:../index.php?page=rastreo-satelital");
+	}elseif ($controller['accion']=="rastrearc") {
+		include_once('../models/posicion.php');
+		$posicion=new Posicion();
+		$posicion->rastrear( $controller );
+		header ("Location:../index.php?page=rastreoCliente");
 	}
 ?>

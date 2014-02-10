@@ -15,19 +15,14 @@
       <div class="col-xs-3">
         <div class="row">
           <form action="controllers/controllerRuta.php?accion=agregar" method=post>
-<?php  
-$todayh = getdate();
-$d = $todayh[mday];
-$m = $todayh[mon];
-$y = $todayh[year];
-?>
-            <input type="hidden" name="fecha" value="<?php echo $d.'/'.$m.'/'.$y ?>" > <br/>
             <label for="">Punto de Inicio</label> <br/>
             <input type="text" name="punto_inicio" value="" id="punto_inicio" > <br/>
             <label for="">Punto de Llegada</label> <br/>
             <input type="text" name="punto_llegada" value="" id="punto_llegada" > <br/>
+            <label for="">Fecha</label> <br/>
+            <input type="date" name="fecha" value="" id="a-fecha" required> <br/>
 
-            <fieldset class="col-xs-6">
+            <fieldset>
               <label for="">Carro</label><br/>
             <select name="carro" id=""><br/>
 <?php  
@@ -35,20 +30,19 @@ $y = $todayh[year];
   $carro=new Carro();
   $lista_carros;
   $cont=1;
-  foreach ($carro->listar() as $row) {
+  foreach ($carro->listarCarrosDisponibles() as $row) {
     $lista_carros[$cont]=$row;
     $cont++;
   }
-
   for ($i=1; $i <=count($lista_carros) ; $i++) { 
-                ?>
-                  <option value="<?php echo $lista_carros[$i]['id'] ?>"><?php echo $lista_carros[$i]['placa_delantera'] ?></option>
-                <?php  
+    ?>
+      <option value="<?php echo $lista_carros[$i]['id'] ?>"><?php echo $lista_carros[$i]['placa_delantera'] ?></option>
+    <?php  
  }
 ?>
               </select>
             </fieldset><br/>
-            <fieldset class="col-xs-6">
+            <fieldset>
               <label for="">Cliente</label><br/>
               <select name="cliente" id="">
 <?php  
