@@ -12,6 +12,14 @@
 	z-index: -1;
 	opacity: .8;
 }
+.btn-center{
+	display: block;
+	margin:  15px auto;
+	width: 90px;
+	clear: both;
+	position: relative;
+	top: 20px;
+}
 
 h4{
 	color: #3276B1;

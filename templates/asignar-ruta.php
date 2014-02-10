@@ -12,7 +12,7 @@
         
       </div>
       
-      <div class="col-xs-4">
+      <div class="col-xs-3">
         <div class="row">
           <form action="controllers/controllerRuta.php?accion=agregar" method=post>
 <?php  
@@ -29,7 +29,7 @@ $y = $todayh[year];
 
             <fieldset class="col-xs-6">
               <label for="">Carro</label><br/>
-            <select name="carro" id="">
+            <select name="carro" id=""><br/>
 <?php  
   include_once('models/carro.php');
   $carro=new Carro();
@@ -47,7 +47,7 @@ $y = $todayh[year];
  }
 ?>
               </select>
-            </fieldset>
+            </fieldset><br/>
             <fieldset class="col-xs-6">
               <label for="">Cliente</label><br/>
               <select name="cliente" id="">
@@ -69,11 +69,11 @@ $y = $todayh[year];
 ?>
               </select><br/>
             </fieldset>
-            <button class="btn btn-primary">registrar</button>
+            <button class="btn btn-primary btn-center">registrar</button>
           </form>
         </div>
       </div>
-      <div class="col-xs-8">
+      <div class="col-xs-9">
         <h3>ruta establecida</h3>
         <div id="mapa">
         </div>
