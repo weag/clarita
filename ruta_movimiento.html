@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Monitoreo Vehículo</title>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/grid.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <style>
+      #mapa{
+        min-height: 500px;
+        border-radius: 15px;
+      }
+      #destino{
+        min-height: 300px;
+        border-radius: 15px;
+      }
+    </style>
+    <script>
+    var directionsDisplay;
+    var directionsService = new google.maps.DirectionsService();
+    var marcadoresNuevos=[];
+    var mapa,destino,coordenadasIda;
+    var coordenadasTermnal= {
+      lat:-5.710094,
+      lng:-78.802894
+    }
+function initialize() {
+  directionsDisplay = new google.maps.DirectionsRenderer();
+  mapa= crearMapa( coordenadasTermnal.lat,coordenadasTermnal.lng,'mapa');
+  //var marcador=crearMarker(new google.maps.LatLng(coordenadasTermnal.lat,coordenadasTermnal.lng),mapa);
+  destino= crearMapa( coordenadasTermnal.lat,coordenadasTermnal.lng,'destino');
+  google.maps.event.addListener(destino, "click", function(event){
+    coordenadasIda = event.latLng;
+    var marcador=crearMarker(coordenadasIda,destino);
+    marcadoresNuevos.push(marcador);
+    eliminarMarkers(marcadoresNuevos);
+    marcador.setMap(destino);
+    destino.panTo(coordenadasIda);
+  });
+  
+  directionsDisplay.setMap(mapa);
+}
+function eliminarMarkers (lista) {
+  for(i in lista){
+    lista[i].setMap(null);
+  }
+}
+function calcRoute() {
+  var request = {
+      origin:new google.maps.LatLng(coordenadasTermnal.lat,coordenadasTermnal.lng),
+      destination: coordenadasIda ,
+      travelMode: google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+//funcion que nos crea un mapa, los parametros lat y lng son las coordanadas y div es el contenedor en cual queremos ver el mapa
+function crearMapa (lat,lng,div) {
+  var mapOptions = {
+    zoom:7,
+    center: new google.maps.LatLng(lat,lng)
+  }
+  var mapCreado = new google.maps.Map(document.getElementById(div), mapOptions);
+  return mapCreado;
+}
+function crearMarker(coordenadas,mapa) {
+  var marker = new google.maps.Marker({
+    position: coordenadas,
+    map: mapa
+  });
+  return marker;
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+  </head>
+  <body>
+    <section class='container'>
+      <h4 class="modal-title">Monitoreo de Ruta del Vehiculo</h4><br>
+      <div class="col-xs-4">
+        <h3>Ubique Lugar de Llegada</h3>
+        <div id="destino" onclick="calcRoute();"></div>
+      </div>
+      <div id="mapa" class="col-xs-8"></div>
+    </section>
+    
+  </body>
+</html>
+

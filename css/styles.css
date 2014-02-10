@@ -1,0 +1,93 @@
+.formulario{
+	padding: 0 6em;
+}
+
+.carro{
+	background: url(../images/carro.png);
+	background-repeat: no-repeat;
+	background-size: 20em;
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	z-index: -1;
+	opacity: .8;
+}
+
+h4{
+	color: #3276B1;
+	text-align: center;
+	text-decoration: underline;
+	font-size: 40px;
+}
+
+.ruta{
+	
+	background-image: none;
+	}
+
+.ubicacion{
+	height: 300px;
+	width: 720px;
+	background-position: center;
+	border-radius: .8em .8em .8em .8em;
+}
+
+#mapa{
+	padding: top;
+      height: 400px;
+      background-color: white;
+    }
+
+.frminicio{
+	border-color: transparent;
+
+}
+
+h3{
+	color: #3276B1;
+	text-align: center;
+	font-size: 28px;
+}
+
+/********** TABLA CONTACTENOS*************/
+
+.tabla{
+	/*border: solid;*/
+	color: #3276B1;
+	border-top: solid;
+}
+
+.cabezera{
+	font-size: 20px;
+	background-color: #E7E7E7;
+}
+
+.filas{
+	border-top: solid;
+}
+
+/************ mapas****************/
+#mapa{
+  min-height: 500px;
+  border-radius: 15px;
+}
+#destino,#partida{
+  min-height: 300px;
+  border-radius: 15px;
+}
+/*************titulo****************/
+.h1-main{
+	font-size: 45px;
+	position: absolute;
+	text-align: center;
+	top:30%;
+	left:40%;
+}
+
+.men_usu{
+	background: #E8E8E8;
+	text-decoration: none;
+	color: #777777;
+	border-radius: .5em .5em .5em .5em;
+	padding: .1em 1em .1em 1em;
+}
