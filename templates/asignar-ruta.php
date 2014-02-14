@@ -149,11 +149,6 @@
       </div>
     </section>
 
-    <button type="button" onclick="calculateDistances();">
-      Calculate
-      distances
-    </button>
-
 <script src="https://maps.googleapis.com/maps/api/js?v=3.10&key=AIzaSyBP3ZaMYVz0M19TaHkskzCYq-dncj2TxjI&sensor=true&language=es"></script>
 <script src="js/functions.js"></script>
 <script>
