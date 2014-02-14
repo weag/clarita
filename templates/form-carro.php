@@ -4,16 +4,16 @@
 
 <form action="controllers/controllerCarro.php?accion=update" method=post>
 	<label for="">Marca</label><br/>
-	<input type="hidden" name="u_id" value=<?php echo $_SESSION["form-carro"]["id"] ?> />
-	<input type="text" name="u_marca" value=<?php echo $_SESSION["form-carro"]["marca"] ?> /> <br/>
+	<input type="hidden" name="u_id" value=<?php echo $_SESSION["form-carro"]["id"] ?> required />
+	<input type="text" name="u_marca" value=<?php echo $_SESSION["form-carro"]["marca"] ?> required /> <br/>
 	<label for="">Modelo</label><br/>
-	<input type="text" name="u_modelo" value=<?php echo $_SESSION["form-carro"]["modelo"] ?> /> <br/>
+	<input type="text" name="u_modelo" value=<?php echo $_SESSION["form-carro"]["modelo"] ?> required /> <br/>
 	<label for="">Placa Delantera</label><br/>
-	<input type="text" name="u_placa_delantera" value=<?php echo $_SESSION["form-carro"]["placa_delantera"] ?> /> <br/>
+	<input type="text" name="u_placa_delantera" value=<?php echo $_SESSION["form-carro"]["placa_delantera"] ?> required /> <br/>
 	<label for="">Placa Latera</label><br/>
-	<input type="text" name="u_placa_lateral" value=<?php echo $_SESSION["form-carro"]["placa_lateral"] ?> /> <br/>
+	<input type="text" name="u_placa_lateral" value=<?php echo $_SESSION["form-carro"]["placa_lateral"] ?> required /> <br/>
 	<label for="">Ubicacion</label><br/>
-	<input type="text" name="u_ubicacion" value=<?php echo $_SESSION["form-carro"]["ubicacion"] ?> /> <br/>
+	<input type="text" name="u_ubicacion" value=<?php echo $_SESSION["form-carro"]["ubicacion"] ?> required /> <br/>
 	
 	<button>Editar</button>
 </form>

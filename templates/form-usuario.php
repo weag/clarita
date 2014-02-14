@@ -12,7 +12,7 @@
 
 	<input type="text" name="u_dni" value=<?php echo $_SESSION["form-usuario"]["dni"] ?> /> <br/>
 	<label for="">Tipo de Usuario</label><br/>
-	
+
 	<input type="text" name="u_id_tipo" value=<?php echo $_SESSION["form-usuario"]["id_tipo"] ?> /> <br/>
 	<label for="">Password</label><br/>
 	<input type="password" name="u_password" value=<?php echo $_SESSION["form-usuario"]["password"] ?> /> <br/>
@@ -25,13 +25,13 @@
 
 <form action="controllers/controllerUsuario.php?accion=insert" method=post>
 	<label for="">Nombre</label><br/>
-	<input type="text" name="u_nombre" /> <br/>
+	<input type="text" name="u_nombre"  required/> <br/>
 	<label for="">email</label><br/>
-	<input type="text" name="u_email" /> <br/>
+	<input type="email" name="u_email"  required/> <br/>
 	<label for="">dni</label><br/>
-	<input type="text" name="u_dni" /> <br/>
+	<input type="number" name="u_dni"  required/> <br/>
 	<label for="">Password</label><br/>
-	<input type="password" name="u_password" /> <br/>
+	<input type="password" name="u_password"  required/> <br/>
 	<label for="">tipo</label><br/>
 	<select name="u_tipo" id="">
 		<option value="1">Administrador</option>
