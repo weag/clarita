@@ -1,16 +1,17 @@
 <section class='container'>
-      <div class="col-xs-5">
+      <div class="col-xs-6">
       	<h2>Carros</h2>
-		<table>
-			<tr>
-				<th>N°</th>
-				<th>Marca</th>
-				<th>Modelo</th>
-				<th>Placa delantera</th>
-				<th>Placa lateral</th>
-				<th>Accion</th>
-			</tr>
-	
+		<table class="table table-striped custab text-center">
+			<thead>
+				<tr>
+					<th>N°</th>
+					<th>Marca</th>
+					<th>Modelo</th>
+					<th>Placa delantera</th>
+					<th>Placa lateral</th>
+					<th>Accion</th>
+				</tr>
+			</thead>
 			<!--Php-->
 			<?php  
 				include_once("listar-carros.php");	
@@ -34,7 +35,7 @@
 		</table>
 
       </div>
-      <div class="col-xs-7">
+      <div class="col-xs-6">
       	<?php  
 			include_once("mapa.php");	
 		?>

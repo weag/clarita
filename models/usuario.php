@@ -60,22 +60,30 @@ class Usuario{
 
 	public function update($data){
 		$data["table"]="cl_user";
-		$data["condicion"]=" where id=".$data['id_cl_user'];
-		$data["set"]=" marca='$data[u_marca]' , modelo='$data[u_modelo]', placa_delantera='$data[u_placa_delantera]', placa_lateral='$data[u_placa_lateral]' ";
+		$data["condicion"]=" where id_cl_user=".$data['u_id_cl_user'];
+		$data["set"]=" nombre='$data[u_nombre]' , email='$data[u_email]', password='$data[u_password]', dni='$data[u_dni]', id_tipo='$data[u_id_tipo]' ";
 		include_once("helpers.php");
 		$helper=new Helpers();
 		return $helper->update( $data );
 	}
+	public function insert($data){
+		$data["table"]="cl_user";
+		$data["values"]=" '$data[u_nombre]' , '$data[u_email]', '$data[u_password]', '$data[u_dni]', '$data[u_tipo]' ";
+
+		include_once("helpers.php");
+		$helper=new Helpers();
+		return $helper->insert( $data );
+	}
+
 	public function editar($data){
-		$pre=array("table"=>"cl_user","id"=>$data["id_cl_user"]);
+		$pre=array("table"=>"cl_user","condicion"=>" where id_cl_user=".$data["id"]);
 		include_once("helpers.php");
 		$helper=new Helpers();
 		return $helper->select( $pre )->fetch();
 	}
 	public function eliminar($data){
 		$data["table"]="cl_user";
-		$data["condicion"]=" where id=".$data['id_cl_user'];
-		$dato=array("table"=>"cl_user");
+		$data["condicion"]=" where id_cl_user=".$data['id'];
 		include_once("helpers.php");
 		$helper=new Helpers();
 		return $helper->delete( $data );

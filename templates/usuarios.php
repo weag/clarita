@@ -19,8 +19,6 @@
 					<th>Acciónes</th>
 		        </tr>
 		    </thead>
-
-
 					<?php  
 						include("listar-usuarios.php");	
 						for ($i=1; $i <=count($listado) ; $i++) { 
@@ -33,8 +31,8 @@
 						<td><?php echo $listado[$i]["dni"]  ?></td>
 						<td><?php echo $listado[$i]["id_tipo"]  ?></td>
 						<td class="text-center">
-							<a class='btn btn-info btn-xs'   href="controllers/controllerUsuario.php?accion=editar&id=<?php echo $listado[$i]["id"] ?>" ><span class="glyphicon glyphicon-edit"></span> Editar</a> 
-							<a class="btn btn-danger btn-xs" href="controllers/controllerUsuario.php?accion=eliminar&id=<?php echo $listado[$i]["id"] ?>" ><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+							<a class='btn btn-info btn-xs'   href="controllers/controllerUsuario.php?accion=editar&id=<?php echo $listado[$i]["id_cl_user"] ?>" ><span class="glyphicon glyphicon-edit"></span> Editar</a> 
+							<a class="btn btn-danger btn-xs" href="controllers/controllerUsuario.php?accion=eliminar&id=<?php echo $listado[$i]["id_cl_user"] ?>" ><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
 						</td>
 
 					</tr>

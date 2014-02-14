@@ -30,7 +30,18 @@ ob_start();//fix header redirecciones
 		$_SESSION["form-usuario"]["template"]="agregar";
 		header ("Location:../index.php?page=usuarios");
 	}
-	elseif ( $controller['accion']=="editar" ) {
+	/************ MANAGEMENT *************/
+	elseif ( $controller['accion']=="insert" ) {
+		include_once('../models/usuario.php');
+		$usuario=new Usuario();
+		$_SESSION["result"]=$usuario->insert( $controller );
+		header ("Location:../index.php?page=usuarios");
+	}elseif ( $controller['accion']=="update" ) {
+		include_once('../models/usuario.php');
+		$usuario=new Usuario();
+		$_SESSION["result"]=$usuario->update( $controller );
+		header ("Location:../index.php?page=usuarios");
+	}elseif ( $controller['accion']=="editar" ) {
 		include_once('../models/usuario.php');
 		$usuario=new Usuario();
 		$_SESSION["form-usuario"]=$usuario->editar( $controller );
@@ -42,6 +53,5 @@ ob_start();//fix header redirecciones
 		$_SESSION["result"]=$usuario->eliminar( $controller );
 		header ("Location:../index.php?page=usuarios");
 	}
-
 ob_end_flush(); 
 ?>

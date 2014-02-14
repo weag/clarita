@@ -39,9 +39,9 @@ class Helpers{
 		$dato=array('accion'=>'insert','table'=>$data["table"],'values'=>$data["values"] );
 		$query=$bd->task($dato);
 		if ($query) {
-			$result=array('error'=>false,'mensaje'=>"Se ha registrado un nuevo carro");
+			$result=array('error'=>false,'mensaje'=>"Registro exitoso");
 		}else{
-			$result=array('error'=>true,'mensaje'=>"No se pudo registrar el carro" );
+			$result=array('error'=>true,'mensaje'=>"No se pudo registrar " );
 		}
 		return $result;
 	}
@@ -51,9 +51,9 @@ class Helpers{
 		$dato=array('accion'=>'delete','table'=>$data["table"],'condicion'=>$data["condicion"]);
 		$query=$bd->task($dato);
 		if ($query) {
-			$result=array('error'=>false,'mensaje'=>"Se ha eliminado el carro exitosamente ");
+			$result=array('error'=>false,'mensaje'=>"Se ha eliminado el registro exitosamente ");
 		}else{
-			$result=array('error'=>true,'mensaje'=>"No se pudo eliminar el carro, intentelo nuevamente.");
+			$result=array('error'=>true,'mensaje'=>"No se pudo eliminar el registro.");
 		}
 		return $result;
 	}

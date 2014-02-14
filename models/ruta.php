@@ -8,7 +8,7 @@ class Ruta{
 		$data[punto_llegada]=str_replace(")","",$data[punto_llegada]);
 
 		$data["table"]="cl_ruta";
-		$data["values"]=" '$data[fecha]' , $data[carro], $data[cliente], '$data[punto_llegada]', '$data[punto_inicio]' ";
+		$data["values"]=" '$data[fecha]' , $data[carro], $data[cliente], '$data[lugar_salida]', '$data[lugar_llegada]', '$data[distancia]', '$data[tiempo]','$data[punto_llegada]', '$data[punto_inicio]', '$data[carga]' ";
 		include_once("helpers.php");
 		$helper=new Helpers();
 		return $helper->insert( $data );

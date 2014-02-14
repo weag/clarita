@@ -16,6 +16,23 @@ function calcRoute() {
       directionsDisplay.setDirections(response);
     }
   });
+
+
+
+  var service = new google.maps.DistanceMatrixService();
+  service.getDistanceMatrix(
+    {
+      origins: [origin1],
+      destinations: [destinationB],
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, callback);
+
+
+
+  
 }
 
 

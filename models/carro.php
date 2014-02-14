@@ -15,14 +15,15 @@ class carro{
 		return $helper->select( $data );
 	}
 	public function editar($data){
-		$pre=array("table"=>"cl_carro","id"=>$data["id"]);
+		$pre=array("table"=>"cl_carro","condicion"=>" where id=".$data["id"]);
 		include_once("helpers.php");
 		$helper=new Helpers();
 		return $helper->select( $pre )->fetch();
 	}
 	public function insert($data){
 		$data["table"]="cl_carro";
-		$data["values"]=" '$data[u_marca]' , '$data[u_modelo]', '$data[u_placa_delantera]', '$data[u_placa_lateral]' ";
+		//id	placa_delantera	placa_lateral	modelo	marca	ubicacion
+		$data["values"]=" '$data[u_placa_delantera]' , '$data[u_placa_lateral]', '$data[u_modelo]', '$data[u_marca]', '$data[u_ubicacion]' ";
 		include_once("helpers.php");
 		$helper=new Helpers();
 		return $helper->insert( $data );

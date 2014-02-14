@@ -10,8 +10,11 @@
 	<input type="text" name="u_modelo" value=<?php echo $_SESSION["form-carro"]["modelo"] ?> /> <br/>
 	<label for="">Placa Delantera</label><br/>
 	<input type="text" name="u_placa_delantera" value=<?php echo $_SESSION["form-carro"]["placa_delantera"] ?> /> <br/>
-	<label for="">Placa Laterak</label><br/>
+	<label for="">Placa Latera</label><br/>
 	<input type="text" name="u_placa_lateral" value=<?php echo $_SESSION["form-carro"]["placa_lateral"] ?> /> <br/>
+	<label for="">Ubicacion</label><br/>
+	<input type="text" name="u_ubicacion" value=<?php echo $_SESSION["form-carro"]["ubicacion"] ?> /> <br/>
+	
 	<button>Editar</button>
 </form>
 
@@ -30,6 +33,8 @@
 	<input type="text" name="u_placa_delantera" /> <br/>
 	<label for="">Placa Laterak</label><br/>
 	<input type="text" name="u_placa_lateral" /> <br/>
+	<label for="">Ubicacion</label><br/>
+	<input type="text" name="u_ubicacion" /> <br/>
 	<button>Agregar</button>
 </form>
 
